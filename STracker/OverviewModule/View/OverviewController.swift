@@ -17,8 +17,8 @@ class OverviewController: BaseViewController {
     override func configure() {
         super.configure()
         title = "Overview"
-        navigationController?.tabBarItem.title = Constants.TabBar.overview
+        navigationController?.tabBarItem.title = Constants.Strings.overview
     }
-
+    
 }
 

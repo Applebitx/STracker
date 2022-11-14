@@ -18,6 +18,8 @@ class SessionViewController: BaseViewController {
     override func configure() {
         super.configure()
         title = "Session"
-        navigationController?.tabBarItem.title = Constants.TabBar.session
+        navigationController?.tabBarItem.title = Constants.Strings.session
+        addNavBarButton(position: .left, title: Constants.Strings.sessionLeft)
+        addNavBarButton(position: .right, title: Constants.Strings.sessionRight)
     }
 }

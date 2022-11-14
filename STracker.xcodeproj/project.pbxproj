@@ -20,6 +20,7 @@
 		973593D6291E5E5D0019CED4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973593D5291E5E5D0019CED4 /* Constants.swift */; };
 		97DB7879292262D700BB02EF /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB7878292262D700BB02EF /* SessionViewController.swift */; };
 		97DB787C2922631300BB02EF /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB787B2922631300BB02EF /* ProgressViewController.swift */; };
+		97DD92F62922BA07005B8C28 /* WorkoutsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DD92F52922BA07005B8C28 /* WorkoutsButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		973593D5291E5E5D0019CED4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		97DB7878292262D700BB02EF /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		97DB787B2922631300BB02EF /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		97DD92F52922BA07005B8C28 /* WorkoutsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				973593BC291E4B860019CED4 /* OverviewController.swift */,
+				97DD92F52922BA07005B8C28 /* WorkoutsButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				973593BD291E4B860019CED4 /* OverviewController.swift in Sources */,
+				97DD92F62922BA07005B8C28 /* WorkoutsButton.swift in Sources */,
 				973593B9291E4B860019CED4 /* AppDelegate.swift in Sources */,
 				970A73B9291E8B00004DCE46 /* Builder.swift in Sources */,
 				97DB787C2922631300BB02EF /* ProgressViewController.swift in Sources */,

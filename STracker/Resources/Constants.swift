@@ -16,18 +16,26 @@ struct Constants {
         static var eliminator = UIColor.hexStringToUIColor(hex: "E8ECEF")
         static var darkGray = UIColor.hexStringToUIColor(hex: "545C77")
         static var background = UIColor.hexStringToUIColor(hex: "#F8F9F9")
+        static var lightBlue = UIColor.hexStringToUIColor(hex: "F0F3FF")
     }
     
     struct Icons {
         static var home = UIImage(systemName: "house")
         static var session = UIImage(systemName: "alarm")
         static var progress = UIImage(systemName: "chart.bar")
+        static var arrowDown = UIImage(systemName: "chevron.compact.down")
     }
     
-    struct TabBar {
+    struct Strings {
         static var overview = "Overview"
         static var session = "Session"
         static var progress = "Progress"
+        static var progressLeft = "Export"
+        static var progressRight = "Details"
+        static var sessionLeft = "Pause"
+        static var sessionRight = "Finish"
+        static var workoutsButton = "All Workouts"
+        
     }
     
     struct Fonts {
