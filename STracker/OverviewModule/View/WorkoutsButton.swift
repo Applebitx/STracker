@@ -24,15 +24,21 @@ final class WorkoutsButton: UIButton {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setTitle(_ title: String) {
+        self.label.text = title
+    }
 }
 
 
 private extension WorkoutsButton {
     
+    
     func addViews() {
         addSubview(label)
         addSubview(iconView)
     }
+    
     func layoutViews() {
         NSLayoutConstraint.activate([
             iconView.widthAnchor.constraint(equalToConstant: 10),
@@ -50,7 +56,6 @@ private extension WorkoutsButton {
         label.textColor = Constants.Colors.active
         label.font = Constants.Fonts.helveticaRegular(with: 15)
         label.textAlignment = .center
-        label.text = Constants.Strings.workoutsButton
         
         iconView.translatesAutoresizingMaskIntoConstraints = false
         iconView.image = Constants.Icons.arrowDown?.withRenderingMode(.alwaysTemplate)
@@ -58,6 +63,7 @@ private extension WorkoutsButton {
         
         backgroundColor = Constants.Colors.lightBlue
         layer.cornerRadius = 14
+        addSystemEffect(self)
         
         
     }

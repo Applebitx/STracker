@@ -24,6 +24,7 @@ struct Constants {
         static var session = UIImage(systemName: "alarm")
         static var progress = UIImage(systemName: "chart.bar")
         static var arrowDown = UIImage(systemName: "chevron.compact.down")
+        static var addButton = UIImage(named:"add")?.withTintColor(Constants.Colors.active)
     }
     
     struct Strings {
@@ -35,6 +36,8 @@ struct Constants {
         static var sessionLeft = "Pause"
         static var sessionRight = "Finish"
         static var workoutsButton = "All Workouts"
+        static var today = "Today"
+        
         
     }
     

@@ -7,16 +7,19 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, UIBaseMethods {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addViews()
+        layoutViews()
+        configure()
     }
     
 }
 
 @objc extension BaseViewController {
-    func add(views: [UIView]) {}
+    func addViews() {}
     func layoutViews() {}
     func configure() {
         view.backgroundColor = Constants.Colors.background
@@ -26,7 +29,7 @@ class BaseViewController: UIViewController {
         
     }
     
-    func navBarRIghtButtonHandler() {
+    func navBarRightButtonHandler() {
         
     }
 }
@@ -45,7 +48,7 @@ extension BaseViewController {
             button.addTarget(self, action: #selector(navBarLeftButtonHandler), for: .touchUpInside)
             navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
         default:
-            button.addTarget(self, action: #selector(navBarRIghtButtonHandler), for: .touchUpInside)
+            button.addTarget(self, action: #selector(navBarRightButtonHandler), for: .touchUpInside)
             navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
         }
         
