@@ -13,11 +13,11 @@ class OverviewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
+        configureViews()
     }
     
-    override func configure() {
-        super.configure()
+    override func configureViews() {
+        super.configureViews()
         navigationController?.navigationBar.isHidden = true
     }
     

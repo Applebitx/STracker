@@ -12,6 +12,7 @@ final class OverviewNavBar: BaseView {
     private let workoutsButton = WorkoutsButton()
     private let addButton = UIButton()
     private let titleLabel = UILabel()
+    private let weekView = WeekView()
     
 }
 
@@ -22,6 +23,7 @@ extension OverviewNavBar {
         addSubview(workoutsButton)
         addSubview(addButton)
         addSubview(titleLabel)
+        addSubview(weekView)
     }
     
     override func layoutViews() {
@@ -29,6 +31,7 @@ extension OverviewNavBar {
         workoutsButton.translatesAutoresizingMaskIntoConstraints = false
         addButton.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        weekView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             addButton.heightAnchor.constraint(equalToConstant: 28),
@@ -43,8 +46,13 @@ extension OverviewNavBar {
             
             titleLabel.centerYAnchor.constraint(equalTo: addButton.centerYAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: workoutsButton.leadingAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15)
-        ])
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            
+            weekView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            weekView.trailingAnchor.constraint(equalTo: addButton.trailingAnchor),
+            weekView.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 5),
+            weekView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
+            ])
     }
     
     override func layoutSubviews() {
@@ -52,8 +60,8 @@ extension OverviewNavBar {
         addBottomBorder(with: Constants.Colors.eliminator, height: 1)
     }
     
-    override func configure() {
-        super.configure()
+    override func configureViews() {
+        super.configureViews()
         backgroundColor = .white
         
         workoutsButton.setTitle(Constants.Strings.workoutsButton)

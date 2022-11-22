@@ -7,31 +7,26 @@
 
 import UIKit
 
-class BaseViewController: UIViewController, UIBaseMethods {
+class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addViews()
         layoutViews()
-        configure()
+        configureViews()
     }
-    
 }
 
-@objc extension BaseViewController {
+@objc extension BaseViewController: UIBaseMethods {
     func addViews() {}
     func layoutViews() {}
-    func configure() {
+    func configureViews() {
         view.backgroundColor = Constants.Colors.background
     }
     
-    func navBarLeftButtonHandler() {
-        
-    }
+    func navBarLeftButtonHandler() {}
     
-    func navBarRightButtonHandler() {
-        
-    }
+    func navBarRightButtonHandler() {}
 }
 
 extension BaseViewController {

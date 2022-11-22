@@ -10,5 +10,5 @@ import Foundation
 protocol UIBaseMethods {
     func addViews()
     func layoutViews()
-    func configure()
+    func configureViews()
 }
