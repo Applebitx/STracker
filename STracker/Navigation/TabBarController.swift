@@ -12,15 +12,13 @@ final class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-
-        // Do any additional setup after loading the view.
     }
     
     private func configure() {
-        tabBar.tintColor = Constants.Colors.active
-        tabBar.barTintColor = Constants.Colors.inactive
+        tabBar.tintColor = C.Colors.active
+        tabBar.barTintColor = C.Colors.inactive
         tabBar.backgroundColor = .white
-        tabBar.layer.borderColor = Constants.Colors.eliminator.cgColor
+        tabBar.layer.borderColor = C.Colors.eliminator.cgColor
         tabBar.layer.borderWidth = 1
         tabBar.layer.masksToBounds = true
         
@@ -33,9 +31,9 @@ final class TabBarController: UITabBarController {
         let sessionNavController = NavBarController(rootViewController: sessionController)
         let progressNavController = NavBarController(rootViewController: progressController)
         
-        overviewNavController.tabBarItem = UITabBarItem(title: Constants.Strings.overview, image: Constants.Icons.home, tag: 1)
-        sessionNavController.tabBarItem = UITabBarItem(title: Constants.Strings.session, image: Constants.Icons.session, tag: 2)
-        progressNavController.tabBarItem = UITabBarItem(title: Constants.Strings.progress, image: Constants.Icons.progress, tag: 3)
+        overviewNavController.tabBarItem = UITabBarItem(title: C.Strings.overview, image: C.Icons.home, tag: 1)
+        sessionNavController.tabBarItem = UITabBarItem(title: C.Strings.session, image: C.Icons.session, tag: 2)
+        progressNavController.tabBarItem = UITabBarItem(title: C.Strings.progress, image: C.Icons.progress, tag: 3)
         
         setViewControllers([overviewNavController, sessionNavController,progressNavController], animated: false)
     }

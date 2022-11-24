@@ -53,15 +53,15 @@ private extension WorkoutsButton {
     
     func configure() {
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = Constants.Colors.active
-        label.font = Constants.Fonts.helveticaRegular(with: 15)
+        label.textColor = C.Colors.active
+        label.font = C.Fonts.helveticaRegular(with: 15)
         label.textAlignment = .center
         
         iconView.translatesAutoresizingMaskIntoConstraints = false
-        iconView.image = Constants.Icons.arrowDown?.withRenderingMode(.alwaysTemplate)
-        iconView.tintColor = Constants.Colors.active
+        iconView.image = C.Icons.arrowDown?.withRenderingMode(.alwaysTemplate)
+        iconView.tintColor = C.Colors.active
         
-        backgroundColor = Constants.Colors.lightBlue
+        backgroundColor = C.Colors.lightBlue
         layer.cornerRadius = 14
         addSystemEffect(self)
         

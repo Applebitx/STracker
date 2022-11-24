@@ -21,9 +21,9 @@ extension WeekView {
             
             let isToday = currentDay.stripTime() == Date().stripTime()
             
-            backgroundColor = isToday ? Constants.Colors.active : Constants.Colors.background
-            nameLabel.textColor = isToday ? .white : Constants.Colors.inactive
-            dateLabel.textColor = isToday ? .white : Constants.Colors.inactive
+            backgroundColor = isToday ? C.Colors.active : C.Colors.background
+            nameLabel.textColor = isToday ? .white : C.Colors.inactive
+            dateLabel.textColor = isToday ? .white : C.Colors.inactive
             nameLabel.text = name.uppercased()
             dateLabel.text = ("\(day)")
         }
@@ -55,11 +55,11 @@ extension WeekView.WeekDayView {
         subStackView.spacing = 1
         subStackView.axis = .vertical
         subStackView.alignment = .center
-        backgroundColor = Constants.Colors.background
+        backgroundColor = C.Colors.background
         
-        nameLabel.font = Constants.Fonts.helveticaRegular(with: 9)
+        nameLabel.font = C.Fonts.helveticaRegular(with: 9)
         nameLabel.textAlignment = .center
-        dateLabel.font = Constants.Fonts.helveticaRegular(with: 15)
+        dateLabel.font = C.Fonts.helveticaRegular(with: 15)
         dateLabel.textAlignment = .center
         
     }

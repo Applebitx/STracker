@@ -20,18 +20,19 @@ extension OverviewNavBar {
     
     override func addViews() {
         super.addViews()
-        addSubview(workoutsButton)
-        addSubview(addButton)
-        addSubview(titleLabel)
-        addSubview(weekView)
+        
+        [workoutsButton, addButton, titleLabel, weekView].forEach {
+            addSubview($0)
+        }
+        
     }
     
     override func layoutViews() {
         super.layoutViews()
-        workoutsButton.translatesAutoresizingMaskIntoConstraints = false
-        addButton.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        weekView.translatesAutoresizingMaskIntoConstraints = false
+        
+        [workoutsButton, addButton, titleLabel, weekView].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
         
         NSLayoutConstraint.activate([
             addButton.heightAnchor.constraint(equalToConstant: 28),
@@ -57,21 +58,21 @@ extension OverviewNavBar {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        addBottomBorder(with: Constants.Colors.eliminator, height: 1)
+        addBottomBorder(with: C.Colors.eliminator, height: 1)
     }
     
     override func configureViews() {
         super.configureViews()
         backgroundColor = .white
         
-        workoutsButton.setTitle(Constants.Strings.workoutsButton)
+        workoutsButton.setTitle(C.Strings.workoutsButton)
         workoutsButton.addTarget(self, action: #selector(workoutsButtonAction), for: .touchUpInside)
         
-        titleLabel.text = Constants.Strings.today
-        titleLabel.font = Constants.Fonts.helveticaRegular(with: 22)
-        titleLabel.textColor = Constants.Colors.darkGray
+        titleLabel.text = C.Strings.today
+        titleLabel.font = C.Fonts.helveticaBold(with: 22)
+        titleLabel.textColor = C.Colors.darkGray
         
-        addButton.setImage(Constants.Icons.addButton, for: .normal)
+        addButton.setImage(C.Icons.addButton, for: .normal)
         addButton.addTarget(self, action: #selector(addButtonDidPressed), for: .touchUpInside)
         addButton.layer.cornerRadius = 14
     }

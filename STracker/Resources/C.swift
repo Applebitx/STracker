@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Constants {
+struct C {
    
     struct Colors {
         static var active = UIColor.hexStringToUIColor(hex: "#437BFE")
@@ -24,7 +24,7 @@ struct Constants {
         static var session = UIImage(systemName: "alarm")
         static var progress = UIImage(systemName: "chart.bar")
         static var arrowDown = UIImage(systemName: "chevron.compact.down")
-        static var addButton = UIImage(named:"add")?.withTintColor(Constants.Colors.active)
+        static var addButton = UIImage(named:"add")?.withTintColor(C.Colors.active)
     }
     
     struct Strings {
@@ -44,6 +44,10 @@ struct Constants {
     struct Fonts {
         static func helveticaRegular(with size: CGFloat) -> UIFont {
             UIFont(name: "Helvetica", size: size) ?? UIFont()
+        }
+        
+        static func helveticaBold(with size: CGFloat) -> UIFont {
+            UIFont(name: "Helvetica-Bold", size: size) ?? UIFont()
         }
     }
 }
