@@ -17,7 +17,7 @@ class BaseViewController: UIViewController {
     }
 }
 
-@objc extension BaseViewController: UIBaseMethods {
+@objc extension BaseViewController {
     func addViews() {}
     func layoutViews() {}
     func configureViews() {

@@ -27,7 +27,6 @@ class OverviewController: BaseViewController {
     
     override func layoutViews() {
         overviewNavBar.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             overviewNavBar.widthAnchor.constraint(equalTo: view.widthAnchor),
             overviewNavBar.topAnchor.constraint(equalTo: view.topAnchor),

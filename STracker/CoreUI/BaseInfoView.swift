@@ -10,12 +10,24 @@ import UIKit
 class BaseInfoView: BaseView {
     private let titleLabel = UILabel()
     private let contentView = UIView()
+    private var button = BaseButton(with: .primary)
     
-    init(with title: String? = nil, alignment: NSTextAlignment = .left) {
-       titleLabel.text = title?.uppercased()
-       titleLabel.textAlignment = alignment
-       super.init(frame: .zero)
-   }
+    init(with title: String? = nil, buttonType: CButtonType? = nil, buttonTitle: String? = nil) {
+        super.init(frame: .zero)
+        self.titleLabel.text = title?.uppercased()
+        if let type = buttonType {
+            self.button = BaseButton(with: type)
+            self.button.setTitle(buttonTitle, for: .normal)
+            titleLabel.textAlignment = .left
+        } else {
+            self.button.isHidden = true
+            titleLabel.textAlignment = .center
+        }
+        addViews()
+        layoutViews()
+        configureViews()
+    }
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -24,15 +36,16 @@ class BaseInfoView: BaseView {
 
 extension BaseInfoView {
     
-    override func addViews() {
+   override func addViews() {
         super.addViews()
-        addSubview(titleLabel)
-        addSubview(contentView)
+        [titleLabel,contentView,button].forEach {
+            addSubview($0)
+        }
     }
     
     override func layoutViews() {
         super.layoutViews()
-        [titleLabel, contentView].forEach {
+        [titleLabel, contentView, button].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -43,6 +56,11 @@ extension BaseInfoView {
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             
+            button.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            button.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+            button.widthAnchor.constraint(equalToConstant: 100),
+            button.heightAnchor.constraint(equalToConstant: 50),
+            
             contentView.topAnchor.constraint(equalTo: contentTopAnchor, constant: contentOffset),
             contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -52,7 +70,6 @@ extension BaseInfoView {
     
     override func configureViews() {
         super.configureViews()
-        backgroundColor = .clear
         
         titleLabel.font = C.Fonts.helveticaRegular(with: 13)
         titleLabel.textColor = C.Colors.inactive

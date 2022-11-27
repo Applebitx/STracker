@@ -9,6 +9,7 @@ import UIKit
 
 class ProgressViewController: BaseViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()

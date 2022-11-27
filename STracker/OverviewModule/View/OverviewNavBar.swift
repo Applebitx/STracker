@@ -9,7 +9,7 @@ import UIKit
 
 final class OverviewNavBar: BaseView {
     
-    private let workoutsButton = WorkoutsButton()
+    private let workoutsButton = BaseButton(with: .workouts)
     private let addButton = UIButton()
     private let titleLabel = UILabel()
     private let weekView = WeekView()
@@ -65,8 +65,8 @@ extension OverviewNavBar {
         super.configureViews()
         backgroundColor = .white
         
-        workoutsButton.setTitle(C.Strings.workoutsButton)
         workoutsButton.addTarget(self, action: #selector(workoutsButtonAction), for: .touchUpInside)
+        workoutsButton.setTitle(C.Strings.workoutsButton)
         
         titleLabel.text = C.Strings.today
         titleLabel.font = C.Fonts.helveticaBold(with: 22)
@@ -75,6 +75,8 @@ extension OverviewNavBar {
         addButton.setImage(C.Icons.addButton, for: .normal)
         addButton.addTarget(self, action: #selector(addButtonDidPressed), for: .touchUpInside)
         addButton.layer.cornerRadius = 14
+        
+        
     }
 }
 

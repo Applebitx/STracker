@@ -9,11 +9,11 @@ import UIKit
 
 class SessionViewController: BaseViewController {
     
-    private var timerView = BaseInfoView(with: nil, alignment: .center)
+    private let timerView = BaseInfoView(with: "TEST", buttonType: .primary, buttonTitle: "TESTTEST")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViews()
+//        configureViews()
         
     }
 }
@@ -32,7 +32,6 @@ extension SessionViewController {
             timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             timerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             timerView.heightAnchor.constraint(equalToConstant: 317)
-            
         ])
     }
     

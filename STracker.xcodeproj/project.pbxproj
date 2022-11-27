@@ -10,6 +10,7 @@
 		97068842292D6E2F00F1605B /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97068841292D6E2F00F1605B /* UIView + ext.swift */; };
 		97068844292D6E7500F1605B /* Date + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97068843292D6E7500F1605B /* Date + ext.swift */; };
 		97068847292E788F00F1605B /* BaseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97068846292E788F00F1605B /* BaseInfoView.swift */; };
+		97068849292FC4CC00F1605B /* ButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97068848292FC4CC00F1605B /* ButtonConfig.swift */; };
 		970A73B9291E8B00004DCE46 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A73B8291E8B00004DCE46 /* Builder.swift */; };
 		970A73BB291E8F07004DCE46 /* NavBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A73BA291E8F07004DCE46 /* NavBarController.swift */; };
 		970A73BD291E969B004DCE46 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A73BC291E969B004DCE46 /* BaseViewController.swift */; };
@@ -35,6 +36,7 @@
 		97068841292D6E2F00F1605B /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		97068843292D6E7500F1605B /* Date + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + ext.swift"; sourceTree = "<group>"; };
 		97068846292E788F00F1605B /* BaseInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoView.swift; sourceTree = "<group>"; };
+		97068848292FC4CC00F1605B /* ButtonConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfig.swift; sourceTree = "<group>"; };
 		970A73B8291E8B00004DCE46 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		970A73BA291E8F07004DCE46 /* NavBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarController.swift; sourceTree = "<group>"; };
 		970A73BC291E969B004DCE46 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				970A73BC291E969B004DCE46 /* BaseViewController.swift */,
 				97915AC329258EB800CD2FD6 /* BaseView.swift */,
 				97068846292E788F00F1605B /* BaseInfoView.swift */,
+				97068848292FC4CC00F1605B /* ButtonConfig.swift */,
 			);
 			path = CoreUI;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				97915AC629258FD500CD2FD6 /* UIBaseMethods.swift in Sources */,
 				979EDD81292D23C0005D7884 /* WeekDayView.swift in Sources */,
 				970A73BB291E8F07004DCE46 /* NavBarController.swift in Sources */,
+				97068849292FC4CC00F1605B /* ButtonConfig.swift in Sources */,
 				97DB7879292262D700BB02EF /* SessionViewController.swift in Sources */,
 				97068847292E788F00F1605B /* BaseInfoView.swift in Sources */,
 			);
