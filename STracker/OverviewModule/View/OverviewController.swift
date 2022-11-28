@@ -10,10 +10,8 @@ import UIKit
 class OverviewController: BaseViewController {
     
     private let overviewNavBar = OverviewNavBar()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViews()
     }
     
     override func configureViews() {

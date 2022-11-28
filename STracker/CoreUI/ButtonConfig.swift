@@ -20,7 +20,7 @@ class BaseButton: UIButton {
     
     init(with type: CButtonType) {
         super.init(frame: .zero)
-        cButtonType = type
+        self.cButtonType = type
         addViews()
         configure()
         layoutViews()
@@ -28,7 +28,7 @@ class BaseButton: UIButton {
     
     required init?(coder: NSCoder) {
         super.init(frame: .zero)
-        cButtonType = .primary
+        self.cButtonType = .primary
         addViews()
         layoutViews()
         configure()
@@ -83,11 +83,11 @@ class BaseButton: UIButton {
             iconView.tintColor = C.Colors.inactive
             label.font = C.Fonts.helveticaRegular(with: 13)
         default:
-            label.textAlignment = .center
             backgroundColor = C.Colors.lightBlue
+            label.font = C.Fonts.helveticaRegular(with: 15)
+            label.textAlignment = .center
             label.textColor = C.Colors.active
             iconView.tintColor = C.Colors.active
-            label.font = C.Fonts.helveticaRegular(with: 15)
             layer.cornerRadius = 14
         }
         
