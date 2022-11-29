@@ -11,8 +11,10 @@ final class TimerView: BaseInfoView {
     
     private let progressView = {
         let view = ProgressView()
+        view.drawProgress(with: 0.6)
         return view
     }()
+    
 }
 
 extension TimerView {

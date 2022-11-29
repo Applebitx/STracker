@@ -10,33 +10,33 @@ import UIKit
 struct C {
    
     struct Colors {
-        static var active = UIColor.hexStringToUIColor(hex: "#437BFE")
-        static var inactive = UIColor.hexStringToUIColor(hex: "#929DA5")
-        static var separator = UIColor.hexStringToUIColor(hex: "#929DA5")
-        static var eliminator = UIColor.hexStringToUIColor(hex: "E8ECEF")
-        static var darkGray = UIColor.hexStringToUIColor(hex: "545C77")
-        static var background = UIColor.hexStringToUIColor(hex: "#F8F9F9")
-        static var lightBlue = UIColor.hexStringToUIColor(hex: "F0F3FF")
+        static let active = UIColor.hexStringToUIColor(hex: "#437BFE")
+        static let inactive = UIColor.hexStringToUIColor(hex: "#929DA5")
+        static let separator = UIColor.hexStringToUIColor(hex: "#929DA5")
+        static let eliminator = UIColor.hexStringToUIColor(hex: "E8ECEF")
+        static let darkGray = UIColor.hexStringToUIColor(hex: "545C77")
+        static let background = UIColor.hexStringToUIColor(hex: "#F8F9F9")
+        static let lightBlue = UIColor.hexStringToUIColor(hex: "F0F3FF")
     }
     
     struct Icons {
-        static var home = UIImage(systemName: "house")
-        static var session = UIImage(systemName: "alarm")
-        static var progress = UIImage(systemName: "chart.bar")
-        static var arrowDown = UIImage(systemName: "chevron.compact.down")
-        static var addButton = UIImage(named:"add")?.withTintColor(C.Colors.active)
+        static let home = UIImage(systemName: "house")
+        static let session = UIImage(systemName: "alarm")
+        static let progress = UIImage(systemName: "chart.bar")
+        static let arrowDown = UIImage(systemName: "chevron.compact.down")
+        static let addButton = UIImage(named:"add")?.withTintColor(C.Colors.active)
     }
     
     struct Strings {
-        static var overview = "Overview"
-        static var session = "Session"
-        static var progress = "Progress"
-        static var progressLeft = "Export"
-        static var progressRight = "Details"
-        static var sessionLeft = "Pause"
-        static var sessionRight = "Finish"
-        static var workoutsButton = "All Workouts"
-        static var today = "Today"
+        static let overview = "Overview"
+        static let session = "Session"
+        static let progress = "Progress"
+        static let progressLeft = "Export"
+        static let progressRight = "Details"
+        static let sessionLeft = "Pause"
+        static let sessionRight = "Finish"
+        static let workoutsButton = "All Workouts"
+        static let today = "Today"
         
         
     }
