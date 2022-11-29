@@ -32,7 +32,7 @@ final class TabBarController: UITabBarController {
         let progressNavController = NavBarController(rootViewController: progressController)
         
         overviewNavController.tabBarItem = UITabBarItem(title: C.Strings.overview, image: C.Icons.home, tag: 1)
-        sessionNavController.tabBarItem = UITabBarItem(title: C.Strings.session, image: C.Icons.session, tag: 2)
+        sessionNavController.tabBarItem = UITabBarItem(title: C.Strings.Session.session, image: C.Icons.session, tag: 2)
         progressNavController.tabBarItem = UITabBarItem(title: C.Strings.progress, image: C.Icons.progress, tag: 3)
         
         setViewControllers([overviewNavController, sessionNavController,progressNavController], animated: false)

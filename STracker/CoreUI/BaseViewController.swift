@@ -46,7 +46,15 @@ extension BaseViewController {
             button.addTarget(self, action: #selector(navBarRightButtonHandler), for: .touchUpInside)
             navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
         }
-        
+    }
+    
+    func addNavBarButtonTitle(position: NavBarPosition, title: String ) {
+        switch position {
+        case .left:
+            (navigationItem.leftBarButtonItem?.customView as? UIButton)?.setTitle(title, for: .normal)
+        default:
+            (navigationItem.rightBarButtonItem?.customView as? UIButton)?.setTitle(title, for: .normal)
+        }
     }
 }
 

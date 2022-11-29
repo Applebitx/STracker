@@ -66,9 +66,9 @@ extension OverviewNavBar {
         backgroundColor = .white
         
         workoutsButton.addTarget(self, action: #selector(workoutsButtonAction), for: .touchUpInside)
-        workoutsButton.setTitle(C.Strings.workoutsButton)
+        workoutsButton.setTitle(C.Strings.Overview.workoutsButton)
         
-        titleLabel.text = C.Strings.today
+        titleLabel.text = C.Strings.Overview.today
         titleLabel.font = C.Fonts.helveticaBold(with: 22)
         titleLabel.textColor = C.Colors.darkGray
         

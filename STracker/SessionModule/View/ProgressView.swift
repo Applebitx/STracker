@@ -12,6 +12,8 @@ extension TimerView {
     final class ProgressView: UIView {
         
         func drawProgress(with percent: CGFloat) {
+            layer.sublayers?.removeAll()
+            
             //curves
             let circleFrame = UIScreen.main.bounds.width - (15 + 40) * 2
             let radius = circleFrame / 2
@@ -42,7 +44,7 @@ extension TimerView {
                 layer.addSublayer($0)
             }
             //dots
-            let dotLayer = CAShapeLayer() //dot
+            let dotLayer = CAShapeLayer() //white dot
             let dotAngle = CGFloat.pi * (7/6 - (8/6 * percent))
             let dotPoint = CGPoint(x: cos(-dotAngle) * radius + center.x,
                                      y: sin(-dotAngle) * radius + center.y)
@@ -66,7 +68,7 @@ extension TimerView {
             let barsLayer = CAShapeLayer()
             let barFrame = UIScreen.main.bounds.width - (15 + 40 + 25) * 2
             let barsRaidus = barFrame / 2
-            let startBarRadius = barsRaidus - barsLayer.lineWidth * 0.5 //point of start bar
+            let startBarRadius = barsRaidus - barsLayer.lineWidth * 0.5
             let endBarRadius = startBarRadius + 6
             let barsPath = UIBezierPath(arcCenter: center,
                                         radius: barsRaidus,
@@ -78,7 +80,7 @@ extension TimerView {
             barsLayer.lineWidth = 6
             barsLayer.path = barsPath.cgPath
             
-            //marks path projection
+            //exact marks projection
             var angle: CGFloat = 7 / 6
             (1...9).forEach { _ in
                 let barAngle = CGFloat.pi * angle
@@ -90,7 +92,7 @@ extension TimerView {
                 barPath.move(to: startBarPoint)
                 barPath.addLine(to: endBarPoint)
                 
-                //exact marks painting
+                //exact mark painting
                 let barLayer = CAShapeLayer()
                 barLayer.path = barPath.cgPath
                 barLayer.fillColor = UIColor.clear.cgColor

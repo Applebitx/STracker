@@ -29,16 +29,22 @@ struct C {
     
     struct Strings {
         static let overview = "Overview"
-        static let session = "Session"
         static let progress = "Progress"
         static let progressLeft = "Export"
         static let progressRight = "Details"
-        static let sessionLeft = "Pause"
-        static let sessionRight = "Finish"
-        static let workoutsButton = "All Workouts"
-        static let today = "Today"
+       
+        struct Session {
+            static let sessionPause = "Pause"
+            static let sessionFinish = "Finish"
+            static let sessionStart = "Start     "
+            static let session = "Session"
+        }
         
-        
+        struct Overview {
+            static let workoutsButton = "All Workouts"
+            static let today = "Today"
+            
+        }
     }
     
     struct Fonts {
