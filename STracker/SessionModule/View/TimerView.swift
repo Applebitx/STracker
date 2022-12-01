@@ -19,7 +19,20 @@ final class TimerView: BaseInfoView {
     private var timer = Timer()
     private var timerProgress: CGFloat = 0
     private var timerDuration: Double  = 0
+    private let elapsedTimeLable = UILabel(with: C.Strings.Session.elapsedTime, position: .center, size: 14, color: C.Colors.inactive)
+    private let elapsedTimeValueLabel = UILabel(with: "32:15", position: .center, size: 46, color: C.Colors.darkGray)
+    private let remainTimeLable  = UILabel(with: C.Strings.Session.remainTime, position: .center, size: 13, color: C.Colors.inactive)
+    private let remainTimeValueLabel = UILabel(with: "9:11", position: .center, size: 23, color: C.Colors.darkGray)
     public var state: TimerState = .isStopped
+    
+    private let timeStackView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.distribution = .fillProportionally
+        view.spacing = 10
+        return view
+    }()
+    
     
     func configure(with duration: Double, progress: Double) {
         timerDuration = duration
@@ -72,17 +85,27 @@ extension TimerView {
     override func addViews() {
         super.addViews()
         addSubview(progressView)
+        addSubview(timeStackView)
+        [elapsedTimeLable, elapsedTimeValueLabel, remainTimeLable, remainTimeValueLabel].forEach {
+            timeStackView.addArrangedSubview($0)
+        }
     }
     
     override func layoutViews() {
         super.layoutViews()
-        progressView.translatesAutoresizingMaskIntoConstraints = false
+        [progressView, timeStackView].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
         let offset: CGFloat = 40
         NSLayoutConstraint.activate([
             progressView.topAnchor.constraint(equalTo: topAnchor, constant: offset),
             progressView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: offset),
             progressView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -offset),
-            progressView.heightAnchor.constraint(equalTo: progressView.widthAnchor)
+            progressView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -offset),
+            progressView.heightAnchor.constraint(equalTo: progressView.widthAnchor),
+            
+            timeStackView.centerYAnchor.constraint(equalTo: progressView.centerYAnchor),
+            timeStackView.centerXAnchor.constraint(equalTo: progressView.centerXAnchor)
         ])
     }
     

@@ -81,7 +81,7 @@ class BaseButton: UIButton {
             backgroundColor = .clear
             label.textColor = C.Colors.inactive
             iconView.tintColor = C.Colors.inactive
-            label.font = C.Fonts.helveticaRegular(with: 13)
+            label.font = C.Fonts.helveticaRegular(with: 14)
         default:
             backgroundColor = C.Colors.lightBlue
             label.font = C.Fonts.helveticaRegular(with: 15)

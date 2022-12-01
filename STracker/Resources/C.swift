@@ -38,6 +38,8 @@ struct C {
             static let sessionFinish = "Finish"
             static let sessionStart = "Start     "
             static let session = "Session"
+            static let elapsedTime = "Elapsed Time"
+            static let remainTime = "Remain Time"
         }
         
         struct Overview {

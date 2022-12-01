@@ -22,7 +22,7 @@
 		973593D2291E4E980019CED4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973593D1291E4E980019CED4 /* TabBarController.swift */; };
 		973593D4291E4F680019CED4 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973593D3291E4F680019CED4 /* Helpers.swift */; };
 		973593D6291E5E5D0019CED4 /* C.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973593D5291E5E5D0019CED4 /* C.swift */; };
-		9743284A29350F0100858555 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9743284929350F0100858555 /* BaseLabel.swift */; };
+		9743284A29350F0100858555 /* UILable + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9743284929350F0100858555 /* UILable + ext.swift */; };
 		9743284C2935208700858555 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9743284B2935208700858555 /* TimerView.swift */; };
 		9743284F2935222A00858555 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9743284E2935222A00858555 /* ProgressView.swift */; };
 		97915AC229258E3E00CD2FD6 /* OverviewNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97915AC129258E3E00CD2FD6 /* OverviewNavBar.swift */; };
@@ -53,7 +53,7 @@
 		973593D1291E4E980019CED4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		973593D3291E4F680019CED4 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		973593D5291E5E5D0019CED4 /* C.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C.swift; sourceTree = "<group>"; };
-		9743284929350F0100858555 /* BaseLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
+		9743284929350F0100858555 /* UILable + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILable + ext.swift"; sourceTree = "<group>"; };
 		9743284B2935208700858555 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		9743284E2935222A00858555 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		97915AC129258E3E00CD2FD6 /* OverviewNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewNavBar.swift; sourceTree = "<group>"; };
@@ -80,6 +80,7 @@
 		97068840292D6DE300F1605B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9743284929350F0100858555 /* UILable + ext.swift */,
 				97068841292D6E2F00F1605B /* UIView + ext.swift */,
 				97068843292D6E7500F1605B /* Date + ext.swift */,
 			);
@@ -241,7 +242,6 @@
 				970A73BC291E969B004DCE46 /* BaseViewController.swift */,
 				97915AC329258EB800CD2FD6 /* BaseView.swift */,
 				97068846292E788F00F1605B /* BaseInfoView.swift */,
-				9743284929350F0100858555 /* BaseLabel.swift */,
 				97068848292FC4CC00F1605B /* ButtonConfig.swift */,
 			);
 			path = CoreUI;
@@ -342,7 +342,7 @@
 				979EDD81292D23C0005D7884 /* WeekDayView.swift in Sources */,
 				970A73BB291E8F07004DCE46 /* NavBarController.swift in Sources */,
 				97068849292FC4CC00F1605B /* ButtonConfig.swift in Sources */,
-				9743284A29350F0100858555 /* BaseLabel.swift in Sources */,
+				9743284A29350F0100858555 /* UILable + ext.swift in Sources */,
 				97DB7879292262D700BB02EF /* SessionViewController.swift in Sources */,
 				97068847292E788F00F1605B /* BaseInfoView.swift in Sources */,
 			);
