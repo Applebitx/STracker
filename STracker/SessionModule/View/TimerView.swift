@@ -20,10 +20,12 @@ final class TimerView: BaseInfoView {
     private var timerProgress: CGFloat = 0
     private var timerDuration: Double  = 0
     private let elapsedTimeLable = UILabel(with: C.Strings.Session.elapsedTime, position: .center, size: 14, color: C.Colors.inactive)
-    private let elapsedTimeValueLabel = UILabel(with: "32:15", position: .center, size: 46, color: C.Colors.darkGray)
-    private let remainTimeLable  = UILabel(with: C.Strings.Session.remainTime, position: .center, size: 13, color: C.Colors.inactive)
-    private let remainTimeValueLabel = UILabel(with: "9:11", position: .center, size: 23, color: C.Colors.darkGray)
-    public var state: TimerState = .isStopped
+    private let elapsedTimeValueLabel = UILabel(with: nil, position: .center, size: 46, color: C.Colors.darkGray)
+    private let remainTimeLabel  = UILabel(with: C.Strings.Session.remainTime, position: .center, size: 13, color: C.Colors.inactive)
+    private let remainTimeValueLabel = UILabel(with: nil, position: .center, size: 23, color: C.Colors.darkGray)
+    
+    var state: TimerState = .isStopped
+    var callback: (() -> ())?
     
     private let timeStackView: UIStackView = {
         let view = UIStackView()
@@ -40,10 +42,12 @@ final class TimerView: BaseInfoView {
         let tempDivider = duration == 0 ? 1 : duration
         let percent = tempCurrentValue / tempDivider
         
+        elapsedTimeValueLabel.text = getDisplayedString(from: Int(tempCurrentValue))
+        remainTimeValueLabel.text = getDisplayedString(from: Int(duration) - Int(tempCurrentValue))
         self.progressView.drawProgress(with: CGFloat(percent))
     }
     
-    func startTimer() {
+    func startTimer(complition: @escaping (CGFloat)->() ) {
         timer.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.01,
                                      repeats: true,
@@ -53,6 +57,7 @@ final class TimerView: BaseInfoView {
             if self.timerProgress > self.timerDuration {
                 self.timerProgress = self.timerDuration
                 self.timer.invalidate()
+                complition(self.timerProgress)
             }
             self.configure(with: self.timerDuration, progress: self.timerProgress)
         })
@@ -65,11 +70,12 @@ final class TimerView: BaseInfoView {
     func stopTimer() {
         guard self.timerProgress > 0 else {return}
         timer.invalidate()
+        self.state = .isStopped
         timer = Timer.scheduledTimer(withTimeInterval: 0.01,
                                      repeats: true,
                                      block: { [weak self] timer in
             guard let self = self else {return}
-            self.timerProgress -= 0.1
+            self.timerProgress -= self.timerProgress / 10
             if self.timerProgress <=  0 {
                 self.timerProgress = 0
                 self.timer.invalidate()
@@ -86,7 +92,7 @@ extension TimerView {
         super.addViews()
         addSubview(progressView)
         addSubview(timeStackView)
-        [elapsedTimeLable, elapsedTimeValueLabel, remainTimeLable, remainTimeValueLabel].forEach {
+        [elapsedTimeLable, elapsedTimeValueLabel, remainTimeLabel, remainTimeValueLabel].forEach {
             timeStackView.addArrangedSubview($0)
         }
     }
@@ -111,5 +117,20 @@ extension TimerView {
     
     override func configureViews() {
         super.configureViews()
+    }
+}
+
+private extension TimerView {
+    
+    func getDisplayedString(from value: Int) -> String {
+        let seconds = value % 60
+        let minutes = (value / 60) % 60
+        let hours = value / 3600
+        
+        let secondStr = seconds < 10 ? "0\(seconds)" : "\(seconds)"
+        let minuteStr = minutes < 10 ? "0\(minutes)" : "\(minutes)"
+        let hourStr = hours < 10 ? "0\(hours)" : "\(hours)"
+        
+        return hours == 0 ? [minuteStr, secondStr].joined(separator: ":") : [hourStr, minuteStr, secondStr].joined(separator: ":")
     }
 }

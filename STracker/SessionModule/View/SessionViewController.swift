@@ -12,7 +12,7 @@ import UIKit
 class SessionViewController: BaseViewController {
     
     private let timerView = TimerView()
-    private let timerDuration = 3.0
+    private let timerDuration: Double = 20
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -21,7 +21,10 @@ class SessionViewController: BaseViewController {
     
     override func navBarLeftButtonHandler() {
         if timerView.state == .isStopped {
-            timerView.startTimer()
+            timerView.startTimer() {_ in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.navBarRightButtonHandler()
+                }}
         } else {
             timerView.pauseTimer()
         }
@@ -30,6 +33,7 @@ class SessionViewController: BaseViewController {
     }
     
     override func navBarRightButtonHandler() {
+        addNavBarButtonTitle(position: .left, title: C.Strings.Session.sessionStart)
         timerView.stopTimer()
     }
 }
@@ -47,7 +51,7 @@ extension SessionViewController {
             timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             timerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            timerView.heightAnchor.constraint(equalToConstant: 338)
+            timerView.heightAnchor.constraint(equalToConstant: 316)
         ])
     }
     
@@ -59,7 +63,9 @@ extension SessionViewController {
         addNavBarButton(position: .left, title: C.Strings.Session.sessionStart)
         addNavBarButton(position: .right, title: C.Strings.Session.sessionFinish)
         
-        timerView.configure(with: timerDuration, progress: timerDuration/2)
+        timerView.configure(with: timerDuration, progress: 0)
     }
 }
+
+
 
