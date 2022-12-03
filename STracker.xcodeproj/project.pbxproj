@@ -30,6 +30,7 @@
 		97915AC629258FD500CD2FD6 /* UIBaseMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97915AC529258FD500CD2FD6 /* UIBaseMethods.swift */; };
 		979EDD7E292BC485005D7884 /* WeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979EDD7D292BC485005D7884 /* WeekView.swift */; };
 		979EDD81292D23C0005D7884 /* WeekDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979EDD80292D23C0005D7884 /* WeekDayView.swift */; };
+		97A7D5BE293AB9B100A2D350 /* PercentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A7D5BD293AB9B100A2D350 /* PercentView.swift */; };
 		97DB7879292262D700BB02EF /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB7878292262D700BB02EF /* SessionViewController.swift */; };
 		97DB787C2922631300BB02EF /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB787B2922631300BB02EF /* ProgressViewController.swift */; };
 		97DD92F62922BA07005B8C28 /* WorkoutsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DD92F52922BA07005B8C28 /* WorkoutsButton.swift */; };
@@ -61,6 +62,7 @@
 		97915AC529258FD500CD2FD6 /* UIBaseMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBaseMethods.swift; sourceTree = "<group>"; };
 		979EDD7D292BC485005D7884 /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		979EDD80292D23C0005D7884 /* WeekDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayView.swift; sourceTree = "<group>"; };
+		97A7D5BD293AB9B100A2D350 /* PercentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentView.swift; sourceTree = "<group>"; };
 		97DB7878292262D700BB02EF /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		97DB787B2922631300BB02EF /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		97DD92F52922BA07005B8C28 /* WorkoutsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsButton.swift; sourceTree = "<group>"; };
@@ -152,6 +154,9 @@
 		9743284D293521DD00858555 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				9743284B2935208700858555 /* TimerView.swift */,
+				9743284E2935222A00858555 /* ProgressView.swift */,
+				97A7D5BD293AB9B100A2D350 /* PercentView.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -221,8 +226,6 @@
 			children = (
 				97DB7878292262D700BB02EF /* SessionViewController.swift */,
 				9743284D293521DD00858555 /* Timer */,
-				9743284B2935208700858555 /* TimerView.swift */,
-				9743284E2935222A00858555 /* ProgressView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				979EDD7E292BC485005D7884 /* WeekView.swift in Sources */,
+				97A7D5BE293AB9B100A2D350 /* PercentView.swift in Sources */,
 				973593BD291E4B860019CED4 /* OverviewController.swift in Sources */,
 				97DD92F62922BA07005B8C28 /* WorkoutsButton.swift in Sources */,
 				973593B9291E4B860019CED4 /* AppDelegate.swift in Sources */,

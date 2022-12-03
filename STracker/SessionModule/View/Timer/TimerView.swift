@@ -17,15 +17,21 @@ final class TimerView: BaseInfoView {
     
     private let progressView = ProgressView()
     private var timer = Timer()
+    var state: TimerState = .isStopped
     private var timerProgress: CGFloat = 0
     private var timerDuration: Double  = 0
     private let elapsedTimeLable = UILabel(with: C.Strings.Session.elapsedTime, position: .center, size: 14, color: C.Colors.inactive)
-    private let elapsedTimeValueLabel = UILabel(with: nil, position: .center, size: 46, color: C.Colors.darkGray)
+    private let elapsedTimeValueLabel = UILabel(position: .center, size: 46, color: C.Colors.darkGray)
     private let remainTimeLabel  = UILabel(with: C.Strings.Session.remainTime, position: .center, size: 13, color: C.Colors.inactive)
-    private let remainTimeValueLabel = UILabel(with: nil, position: .center, size: 23, color: C.Colors.darkGray)
+    private let remainTimeValueLabel = UILabel(position: .center, size: 23, color: C.Colors.darkGray)
+    private let completedView = PercentView()
+    private let remainingView = PercentView()
     
-    var state: TimerState = .isStopped
-    var callback: (() -> ())?
+    private let separatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = C.Colors.eliminator
+        return view
+    }()
     
     private let timeStackView: UIStackView = {
         let view = UIStackView()
@@ -35,15 +41,24 @@ final class TimerView: BaseInfoView {
         return view
     }()
     
+    private let bottomStackView: UIStackView = {
+        let view = UIStackView()
+        view.distribution = .fillProportionally
+        view.spacing = 10
+        return view
+    }()
     
     func configure(with duration: Double, progress: Double) {
         timerDuration = duration
         let tempCurrentValue = progress > duration ? duration : progress
         let tempDivider = duration == 0 ? 1 : duration
         let percent = tempCurrentValue / tempDivider
+        let roundedPercent = Int(round(percent * 100))
         
         elapsedTimeValueLabel.text = getDisplayedString(from: Int(tempCurrentValue))
         remainTimeValueLabel.text = getDisplayedString(from: Int(duration) - Int(tempCurrentValue))
+        completedView.configure(with: C.Strings.Session.complited, value: roundedPercent)
+        remainingView.configure(with: C.Strings.Session.remaining, value: 100 - roundedPercent)
         self.progressView.drawProgress(with: CGFloat(percent))
     }
     
@@ -75,7 +90,7 @@ final class TimerView: BaseInfoView {
                                      repeats: true,
                                      block: { [weak self] timer in
             guard let self = self else {return}
-            self.timerProgress -= self.timerProgress / 10
+            self.timerProgress -=  self.timerProgress / 4
             if self.timerProgress <=  0 {
                 self.timerProgress = 0
                 self.timer.invalidate()
@@ -83,7 +98,6 @@ final class TimerView: BaseInfoView {
             self.configure(with: self.timerDuration, progress: self.timerProgress)
         })
     }
-    
 }
 
 extension TimerView {
@@ -92,31 +106,37 @@ extension TimerView {
         super.addViews()
         addSubview(progressView)
         addSubview(timeStackView)
+        addSubview(bottomStackView)
+        
         [elapsedTimeLable, elapsedTimeValueLabel, remainTimeLabel, remainTimeValueLabel].forEach {
             timeStackView.addArrangedSubview($0)
+        }
+        
+        [completedView, separatorView, remainingView].forEach {
+            bottomStackView.addArrangedSubview($0)
         }
     }
     
     override func layoutViews() {
         super.layoutViews()
-        [progressView, timeStackView].forEach {
+        [progressView, timeStackView, bottomStackView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         let offset: CGFloat = 40
+        progressView.pinToSuperview(offset: offset)
         NSLayoutConstraint.activate([
-            progressView.topAnchor.constraint(equalTo: topAnchor, constant: offset),
-            progressView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: offset),
-            progressView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -offset),
-            progressView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -offset),
             progressView.heightAnchor.constraint(equalTo: progressView.widthAnchor),
             
             timeStackView.centerYAnchor.constraint(equalTo: progressView.centerYAnchor),
-            timeStackView.centerXAnchor.constraint(equalTo: progressView.centerXAnchor)
+            timeStackView.centerXAnchor.constraint(equalTo: progressView.centerXAnchor),
+            
+            bottomStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -28),
+            bottomStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            bottomStackView.heightAnchor.constraint(equalToConstant: 35),
+            bottomStackView.widthAnchor.constraint(equalToConstant: 175),
+            
+            separatorView.widthAnchor.constraint(equalToConstant: 1)
         ])
-    }
-    
-    override func configureViews() {
-        super.configureViews()
     }
 }
 

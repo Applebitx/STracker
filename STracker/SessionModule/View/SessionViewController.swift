@@ -12,11 +12,10 @@ import UIKit
 class SessionViewController: BaseViewController {
     
     private let timerView = TimerView()
-    private let timerDuration: Double = 20
+    private let timerDuration: Double = 250
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViews()
-        
     }
     
     override func navBarLeftButtonHandler() {
