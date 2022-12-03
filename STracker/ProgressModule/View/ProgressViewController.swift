@@ -18,9 +18,9 @@ class ProgressViewController: BaseViewController {
     
     override func configureViews() {
         super.configureViews()
-        title = "Progress"
-        navigationController?.tabBarItem.title = C.Strings.progress
-        addNavBarButton(position: .left, title: C.Strings.progressLeft)
-        addNavBarButton(position: .right, title: C.Strings.progressRight)
+        title = C.Strings.Progress.progress
+        navigationController?.tabBarItem.title = C.Strings.Progress.progress
+        addNavBarButton(position: .left, title: C.Strings.Progress.progressLeft)
+        addNavBarButton(position: .right, title: C.Strings.Progress.progressRight)
     }
 }

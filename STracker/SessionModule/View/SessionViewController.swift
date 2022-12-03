@@ -12,7 +12,13 @@ import UIKit
 class SessionViewController: BaseViewController {
     
     private let timerView = TimerView()
-    private let timerDuration: Double = 250
+    private let timerDuration: Double = 15
+    private let statsView = BaseInfoView()
+    private let workoutsLabel: UILabel = {
+        let lable = UILabel(with: C.Strings.Session.workoutsLabel ,position: .center, size: 13, color: C.Colors.inactive)
+        return lable
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +56,7 @@ extension SessionViewController {
             timerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             timerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             timerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            timerView.heightAnchor.constraint(equalToConstant: 316)
+            timerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.45)
         ])
     }
     

@@ -20,7 +20,7 @@
 		973593C2291E4B860019CED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 973593C1291E4B860019CED4 /* Assets.xcassets */; };
 		973593C5291E4B860019CED4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 973593C3291E4B860019CED4 /* LaunchScreen.storyboard */; };
 		973593D2291E4E980019CED4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973593D1291E4E980019CED4 /* TabBarController.swift */; };
-		973593D4291E4F680019CED4 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973593D3291E4F680019CED4 /* Helpers.swift */; };
+		973593D4291E4F680019CED4 /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973593D3291E4F680019CED4 /* UIColor + ext.swift */; };
 		973593D6291E5E5D0019CED4 /* C.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973593D5291E5E5D0019CED4 /* C.swift */; };
 		9743284A29350F0100858555 /* UILable + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9743284929350F0100858555 /* UILable + ext.swift */; };
 		9743284C2935208700858555 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9743284B2935208700858555 /* TimerView.swift */; };
@@ -52,7 +52,7 @@
 		973593C4291E4B860019CED4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		973593C6291E4B860019CED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		973593D1291E4E980019CED4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		973593D3291E4F680019CED4 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		973593D3291E4F680019CED4 /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		973593D5291E5E5D0019CED4 /* C.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = C.swift; sourceTree = "<group>"; };
 		9743284929350F0100858555 /* UILable + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILable + ext.swift"; sourceTree = "<group>"; };
 		9743284B2935208700858555 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -85,6 +85,7 @@
 				9743284929350F0100858555 /* UILable + ext.swift */,
 				97068841292D6E2F00F1605B /* UIView + ext.swift */,
 				97068843292D6E7500F1605B /* Date + ext.swift */,
+				973593D3291E4F680019CED4 /* UIColor + ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -143,7 +144,6 @@
 			children = (
 				97068840292D6DE300F1605B /* Extensions */,
 				973593D5291E5E5D0019CED4 /* C.swift */,
-				973593D3291E4F680019CED4 /* Helpers.swift */,
 				973593C1291E4B860019CED4 /* Assets.xcassets */,
 				973593C3291E4B860019CED4 /* LaunchScreen.storyboard */,
 				973593C6291E4B860019CED4 /* Info.plist */,
@@ -336,7 +336,7 @@
 				97DB787C2922631300BB02EF /* ProgressViewController.swift in Sources */,
 				97068842292D6E2F00F1605B /* UIView + ext.swift in Sources */,
 				973593D2291E4E980019CED4 /* TabBarController.swift in Sources */,
-				973593D4291E4F680019CED4 /* Helpers.swift in Sources */,
+				973593D4291E4F680019CED4 /* UIColor + ext.swift in Sources */,
 				9743284C2935208700858555 /* TimerView.swift in Sources */,
 				970A73BD291E969B004DCE46 /* BaseViewController.swift in Sources */,
 				973593BB291E4B860019CED4 /* SceneDelegate.swift in Sources */,

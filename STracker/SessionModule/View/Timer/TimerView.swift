@@ -132,8 +132,8 @@ extension TimerView {
             
             bottomStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -28),
             bottomStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            bottomStackView.heightAnchor.constraint(equalToConstant: 35),
-            bottomStackView.widthAnchor.constraint(equalToConstant: 175),
+            bottomStackView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5),
+            bottomStackView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1),
             
             separatorView.widthAnchor.constraint(equalToConstant: 1)
         ])
