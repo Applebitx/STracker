@@ -33,14 +33,7 @@ extension BaseInfoView {
     
     override func layoutViews() {
         super.layoutViews()
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        contentView.pinToSuperview()
     }
     
     override func configureViews() {

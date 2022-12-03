@@ -6,9 +6,8 @@
 //
 
 import UIKit
-
 extension UIView {
-   
+    
     //MARK: Bottom border for navigation controller
     
     func addBottomBorder(with color: UIColor, height: CGFloat) {
@@ -42,5 +41,32 @@ extension UIView {
     
     @objc func pressOut() {
         UIView.animate(withDuration: 0.15) {self.alpha = 1}
+    }
+    
+    //MARK: pin
+    
+    func pinToSuperview(offset: CGFloat? = nil) {
+        guard let superview = superview else { fatalError("UIView+pinToSuperview: \(description) has no superview.") }
+        if let offset = offset {
+            pin(to: superview, offset: offset )
+        } else {
+            pin(to: superview)
+        }
+    }
+    
+    func pin(to view: UIView, offset: CGFloat? = nil) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        if let offset = offset {
+            leftAnchor.constraint(equalTo: view.leftAnchor, constant: offset).isActive = true
+            rightAnchor.constraint(equalTo: view.rightAnchor, constant: -offset).isActive = true
+            topAnchor.constraint(equalTo: view.topAnchor, constant: offset).isActive = true
+            bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -offset).isActive = true
+        } else {
+            leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+            rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+            topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+            bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        }
+        
     }
 }

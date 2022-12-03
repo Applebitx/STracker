@@ -9,7 +9,7 @@ import UIKit
 
 extension UILabel {
     
-    convenience init(with text: String?,  position: NSTextAlignment, size: CGFloat, color: UIColor) {
+    convenience init(with text: String? = nil,  position: NSTextAlignment, size: CGFloat, color: UIColor) {
         self.init(frame: .zero)
         self.text = text
         self.textAlignment = position

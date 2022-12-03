@@ -20,18 +20,12 @@ extension WeekView {
         super.addViews()
         addSubview(stackView)
     }
+    
     override func layoutViews() {
         super.layoutViews()
-        
-        stackView.translatesAutoresizingMaskIntoConstraints =  false
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
-        
+        stackView.pinToSuperview()
     }
+    
     override func configureViews() {
         super.configureViews()
         stackView.spacing = 7
