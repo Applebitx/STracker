@@ -97,8 +97,8 @@
 		97068845292E720600F1605B /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				973593D1291E4E980019CED4 /* TabBarController.swift */,
 				970A73BA291E8F07004DCE46 /* NavBarController.swift */,
+				973593D1291E4E980019CED4 /* TabBarController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";

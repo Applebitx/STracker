@@ -26,7 +26,7 @@ class BaseView: UIView {
     
 }
 
-@objc extension BaseView: UIBaseMethods {
+@objc extension BaseView {
     
     func addViews() {}
     func layoutViews() {}

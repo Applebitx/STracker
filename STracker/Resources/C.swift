@@ -25,14 +25,20 @@ struct C {
         static let progress = UIImage(systemName: "chart.bar")
         static let arrowDown = UIImage(systemName: "chevron.compact.down")
         static let addButton = UIImage(named:"add")?.withTintColor(C.Colors.active)
+        static let heartRate = UIImage(named:"HeartBeat")?.withTintColor(C.Colors.inactive)
+        static let speed = UIImage(named:"Speed")?.withTintColor(C.Colors.inactive)
+        static let steps = UIImage(named:"Steps")?.withTintColor(C.Colors.inactive)
+        static let totalDistance = UIImage(named:"Maps")?.withTintColor(C.Colors.inactive)
     }
     
     struct Strings {
-        static let overview = "Overview"
-        static let progress = "Progress"
-        static let progressLeft = "Export"
-        static let progressRight = "Details"
-       
+        
+        struct Overview {
+            static let workoutsButton = "All Workouts"
+            static let today = "Today"
+            static let overview = "Overview"
+        }
+        
         struct Session {
             static let sessionPause = "Pause"
             static let sessionFinish = "Finish"
@@ -42,12 +48,18 @@ struct C {
             static let remainTime = "Remain Time"
             static let complited = "COMPLITED"
             static let remaining = "REMAINING"
+            static let speed = "AVERAGE PACE"
+            static let steps = "TOTAL STEPS"
+            static let totalDistance = "TOTAL DISTANCE"
+            static let heartRate = "HEART RATE"
+            static let workoutsLabel = "WORKOUTS STATS"
+            
         }
         
-        struct Overview {
-            static let workoutsButton = "All Workouts"
-            static let today = "Today"
-            
+        struct Progress {
+            static let progress = "Progress"
+            static let progressLeft = "Export"
+            static let progressRight = "Details"
         }
     }
     

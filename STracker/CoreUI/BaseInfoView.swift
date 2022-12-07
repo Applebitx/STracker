@@ -9,7 +9,7 @@ import UIKit
 
 class BaseInfoView: BaseView {
 
-    private let contentView = UIView()
+    internal let contentView = UIView()
     
     init() {
         super.init(frame: .zero)
