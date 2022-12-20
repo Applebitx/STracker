@@ -53,13 +53,15 @@ struct C {
             static let totalDistance = "TOTAL DISTANCE"
             static let heartRate = "HEART RATE"
             static let workoutsLabel = "WORKOUTS STATS"
-            
+            static let stepsLabel = "STEPS COUNTER"
         }
         
         struct Progress {
             static let progress = "Progress"
             static let progressLeft = "Export"
             static let progressRight = "Details"
+            static let daily = "DAILY PERFORMANCE"
+            static let mounthly = "MOUNTHLY PERFORMANCE"
         }
     }
     

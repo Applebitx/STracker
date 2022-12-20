@@ -12,6 +12,7 @@ final class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        
     }
     
     private func configure() {
@@ -36,6 +37,7 @@ final class TabBarController: UITabBarController {
         progressNavController.tabBarItem = UITabBarItem(title: C.Strings.Progress.progress, image: C.Icons.progress, tag: 3)
         
         setViewControllers([overviewNavController, sessionNavController,progressNavController], animated: false)
+        self.selectedIndex = 2
     }
 }
 

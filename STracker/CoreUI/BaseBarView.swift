@@ -40,7 +40,7 @@ class BaseBarView: BaseView {
         self.heightMultiplier = data.heightMultiplier
         super.init(frame: .zero)
         self.valueLabel.text = data.value
-        self.titleLabel.text = data.title
+        self.titleLabel.text = data.title.uppercased()
     }
     
     required init?(coder: NSCoder) {
@@ -68,14 +68,16 @@ extension BaseBarView {
         NSLayoutConstraint.activate([
             barView.centerXAnchor.constraint(equalTo: centerXAnchor),
             barView.widthAnchor.constraint(equalToConstant: 17),
-            barView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: self.heightMultiplier, constant: -40),
+            barView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: self.heightMultiplier * 0.8),
             
             valueLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             valueLabel.bottomAnchor.constraint(equalTo: barView.topAnchor, constant: -5),
+            valueLabel.heightAnchor.constraint(equalToConstant: 10),
             
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
-            titleLabel.topAnchor.constraint(equalTo: barView.bottomAnchor, constant: 10)
+            titleLabel.topAnchor.constraint(equalTo: barView.bottomAnchor, constant: 10),
+            titleLabel.heightAnchor.constraint(equalToConstant: 10)
         ])
     }
 }
